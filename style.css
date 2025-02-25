@@ -277,27 +277,25 @@ nav a:hover {
 }
 /* Why Us Section */
 .why-us {
+  background: linear-gradient(135deg, #9a2a2a, #630505);
+}
+.why-us {
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(135deg, #9a2a2a, #630505);
 }
 
 .why-us h1 {
-  font-size: 3rem; /* Adjusted for smaller screens */
+  font-size: 3.5rem;
   margin-bottom: 2rem;
   color: #f7f7f7;
 }
 
 .why-us-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Responsive grid */
-  gap: 20px; /* Reduced gap for smaller screens */
-  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .why-us-item {
@@ -315,8 +313,8 @@ nav a:hover {
 
 .why-us-item img {
   width: 100%;
-  height: 200px; /* Fixed height for consistency */
-  object-fit: cover; /* Ensure images fit within the container */
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -335,21 +333,21 @@ nav a:hover {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .why-us h1 {
-    font-size: 2.5rem; /* Smaller heading for tablets */
+    font-size: 2.5rem;
   }
 
   .why-us-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .why-us h1 {
-    font-size: 2rem; /* Smaller heading for mobile */
+    font-size: 2rem;
   }
 
   .why-us-container {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -700,7 +698,7 @@ S .footer-links h3,
 .footer-social h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ffd700; /* Gold color for headings */
+  color: #ffd700;
 }
 
 .footer-links ul {
@@ -721,7 +719,7 @@ S .footer-links h3,
 
 .footer-links ul li a:hover {
   opacity: 1;
-  color: #ffd700; /* Gold color on hover */
+  color: #ffd700;
 }
 
 .social-icons {
@@ -821,7 +819,7 @@ S .footer-links h3,
 @media (max-width: 320px) {
   /* General Reset */
   body {
-    padding-top: 60px; /* Adjust for fixed header */
+    padding-top: 60px;
   }
 
   /* Header Section */
@@ -830,21 +828,21 @@ S .footer-links h3,
   }
 
   #top-nav img {
-    height: 40px; /* Smaller logo */
+    height: 40px;
   }
 
   #top-nav h1 {
-    font-size: 1.2rem; /* Smaller heading */
+    font-size: 1.2rem;
   }
 
   .menu-toggle {
-    padding: 5px; /* Smaller padding */
+    padding: 5px;
   }
 
   .hamburger,
   .hamburger::before,
   .hamburger::after {
-    width: 20px; /* Smaller hamburger icon */
+    width: 20px;
     height: 2px;
   }
 
@@ -858,141 +856,141 @@ S .footer-links h3,
 
   /* Hero Section */
   .hero-content h2 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   .hero-content p {
-    font-size: 1rem; /* Smaller paragraph */
+    font-size: 1rem;
   }
 
   .cta-button.secondary {
-    padding: 8px 16px; /* Smaller button */
+    padding: 8px 16px;
     font-size: 0.8rem;
   }
 
   /* Why Us Section */
   .why-us h1 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   .why-us-container {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 15px; /* Smaller gap */
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .why-us-item img {
-    height: 150px; /* Smaller image height */
+    height: 100px;
   }
 
   .why-us-item h3 {
-    font-size: 1.2rem; /* Smaller heading */
+    font-size: 1.2rem;
   }
 
   .why-us-item p {
-    font-size: 0.9rem; /* Smaller paragraph */
+    font-size: 0.9rem;
   }
 
   /* About Us Section */
   .about-us h1 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   .about-content {
-    flex-direction: column; /* Stack content vertically */
-    gap: 2rem; /* Smaller gap */
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .about-text h2 {
-    font-size: 1.5rem; /* Smaller heading */
+    font-size: 1.5rem;
   }
 
   .about-text p {
-    font-size: 0.9rem; /* Smaller paragraph */
+    font-size: 0.9rem;
   }
 
   .about-image img {
-    width: 100%; /* Full-width image */
+    width: 100%;
   }
 
   /* Portfolio Section */
   .portfolio h1 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 15px; /* Smaller gap */
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .portfolio-item img {
-    height: 200px; /* Smaller image height */
+    height: 200px;
   }
 
   .overlay h3 {
-    font-size: 1.2rem; /* Smaller heading */
+    font-size: 1.2rem;
   }
 
   .overlay p {
-    font-size: 0.9rem; /* Smaller paragraph */
+    font-size: 0.9rem;
   }
 
   /* Book a Session Section */
   #book-session h2 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   #book-session p {
-    font-size: 1rem; /* Smaller paragraph */
+    font-size: 1rem;
   }
 
   .booking-form {
-    padding: 15px; /* Smaller padding */
+    padding: 15px;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
-    padding: 8px; /* Smaller padding */
-    font-size: 0.9rem; /* Smaller font size */
+    padding: 8px;
+    font-size: 0.9rem;
   }
 
   .cta-button {
-    padding: 8px 16px; /* Smaller button */
+    padding: 8px 16px;
     font-size: 0.8rem;
   }
 
   /* Footer Section */
   .footer-logo img {
-    width: 80px; /* Smaller logo */
+    width: 80px;
   }
 
   .footer-logo p {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem;
   }
 
   .footer-links h3,
   .footer-social h3 {
-    font-size: 1.2rem; /* Smaller heading */
+    font-size: 1.2rem;
   }
 
   .footer-links ul li a {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem;
   }
 
   .social-icons a img {
-    width: 25px; /* Smaller icons */
+    width: 25px;
   }
 
   .footer-bottom {
-    font-size: 0.8rem; /* Smaller text */
+    font-size: 0.8rem;
   }
 
   /* Transition Section */
   .transition-section h2 {
-    font-size: 1.8rem; /* Smaller heading */
+    font-size: 1.8rem;
   }
 
   .transition-section p {
-    font-size: 1rem; /* Smaller paragraph */
+    font-size: 1rem;
   }
 }
