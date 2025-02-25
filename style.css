@@ -25,6 +25,11 @@ dl,
 dd {
   margin-block-end: 0;
 }
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 ul[role="list"],
 ol[role="list"] {
@@ -46,20 +51,15 @@ body {
   padding: 0 20px;
 }
 /* Header Section */
+/* Header Section */
 #head {
-  position: fixed; /* Fixed at the top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1200;
-  background-color: rgba(11, 11, 11, 0.9); /* Semi-transparent background */
+  z-index: 1000;
+  background-color: rgba(11, 11, 11, 0.9);
   padding: 1rem 0;
-  overflow: hidden;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 #top-nav {
@@ -74,7 +74,7 @@ body {
 }
 
 #top-nav img {
-  height: 90px; /* Adjust the logo size */
+  height: 60px; /* Smaller logo for better fit */
   margin-right: 10px;
   border-radius: 50%;
 }
@@ -87,7 +87,7 @@ body {
 
 nav {
   display: flex;
-  gap: 50px;
+  gap: 20px; /* Reduced gap for smaller screens */
   margin-left: auto;
 }
 
@@ -96,7 +96,6 @@ nav a {
   color: #f8f6f6;
   font-weight: bold;
   transition: color 0.3s ease;
-  gap: 50px;
 }
 
 nav a:hover {
@@ -112,6 +111,7 @@ nav a:hover {
   cursor: pointer;
   padding: 10px;
 }
+
 .hamburger {
   display: block;
   width: 25px;
@@ -119,6 +119,7 @@ nav a:hover {
   background-color: white;
   position: relative;
 }
+
 .hamburger::before,
 .hamburger::after {
   content: "";
@@ -154,11 +155,11 @@ nav a:hover {
   }
 
   nav.active {
-    display: flex;
+    display: flex; /* Show nav links when menu is toggled */
   }
 
   .menu-toggle {
-    display: block;
+    display: block; /* Show menu toggle button */
   }
 
   .menu-toggle.active .hamburger {
@@ -276,25 +277,27 @@ nav a:hover {
 }
 /* Why Us Section */
 .why-us {
-  background: linear-gradient(135deg, #9a2a2a, #630505);
-}
-.why-us {
   padding: 4rem 0;
   text-align: center;
+  background: linear-gradient(135deg, #9a2a2a, #630505);
 }
 
 .why-us h1 {
-  font-size: 3.5rem;
+  font-size: 3rem; /* Adjusted for smaller screens */
   margin-bottom: 2rem;
   color: #f7f7f7;
 }
 
 .why-us-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Reduced gap for smaller screens */
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .why-us-item {
@@ -312,8 +315,8 @@ nav a:hover {
 
 .why-us-item img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure images fit within the container */
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -328,15 +331,25 @@ nav a:hover {
   font-size: 1rem;
   color: #fdfcfc;
 }
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .why-us h1 {
+    font-size: 2.5rem; /* Smaller heading for tablets */
+  }
+
   .why-us-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
   }
 }
 
 @media (max-width: 480px) {
+  .why-us h1 {
+    font-size: 2rem; /* Smaller heading for mobile */
+  }
+
   .why-us-container {
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr; /* Single column on mobile */
   }
 }
 
@@ -803,5 +816,183 @@ S .footer-links h3,
 
   .booking-form {
     flex-direction: column;
+  }
+}
+@media (max-width: 320px) {
+  /* General Reset */
+  body {
+    padding-top: 60px; /* Adjust for fixed header */
+  }
+
+  /* Header Section */
+  #head {
+    padding: 0.5rem 0;
+  }
+
+  #top-nav img {
+    height: 40px; /* Smaller logo */
+  }
+
+  #top-nav h1 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+
+  .menu-toggle {
+    padding: 5px; /* Smaller padding */
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    width: 20px; /* Smaller hamburger icon */
+    height: 2px;
+  }
+
+  .hamburger::before {
+    top: -6px;
+  }
+
+  .hamburger::after {
+    top: 6px;
+  }
+
+  /* Hero Section */
+  .hero-content h2 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Smaller paragraph */
+  }
+
+  .cta-button.secondary {
+    padding: 8px 16px; /* Smaller button */
+    font-size: 0.8rem;
+  }
+
+  /* Why Us Section */
+  .why-us h1 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .why-us-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Smaller gap */
+  }
+
+  .why-us-item img {
+    height: 150px; /* Smaller image height */
+  }
+
+  .why-us-item h3 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+
+  .why-us-item p {
+    font-size: 0.9rem; /* Smaller paragraph */
+  }
+
+  /* About Us Section */
+  .about-us h1 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack content vertically */
+    gap: 2rem; /* Smaller gap */
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .about-text p {
+    font-size: 0.9rem; /* Smaller paragraph */
+  }
+
+  .about-image img {
+    width: 100%; /* Full-width image */
+  }
+
+  /* Portfolio Section */
+  .portfolio h1 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Smaller gap */
+  }
+
+  .portfolio-item img {
+    height: 200px; /* Smaller image height */
+  }
+
+  .overlay h3 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+
+  .overlay p {
+    font-size: 0.9rem; /* Smaller paragraph */
+  }
+
+  /* Book a Session Section */
+  #book-session h2 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  #book-session p {
+    font-size: 1rem; /* Smaller paragraph */
+  }
+
+  .booking-form {
+    padding: 15px; /* Smaller padding */
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 8px; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .cta-button {
+    padding: 8px 16px; /* Smaller button */
+    font-size: 0.8rem;
+  }
+
+  /* Footer Section */
+  .footer-logo img {
+    width: 80px; /* Smaller logo */
+  }
+
+  .footer-logo p {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .footer-links h3,
+  .footer-social h3 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+
+  .footer-links ul li a {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .social-icons a img {
+    width: 25px; /* Smaller icons */
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  /* Transition Section */
+  .transition-section h2 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .transition-section p {
+    font-size: 1rem; /* Smaller paragraph */
   }
 }
