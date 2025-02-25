@@ -10,6 +10,8 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   background-attachment: fixed;
+
+  scroll-behavior: smooth;
 }
 
 body,
@@ -29,6 +31,7 @@ ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
+/* Fade-in animation */
 
 body {
   min-height: 100vh;
@@ -46,7 +49,7 @@ body {
 
 /* Header Section */
 #head {
-  background-color: #0b0b0b;
+  background-color: #630505;
   padding: 1rem 0;
 }
 
@@ -88,6 +91,11 @@ body {
   color: white;
   overflow: hidden;
 }
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
 .video-container {
   position: absolute;
@@ -96,19 +104,20 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+  transform: translateZ(-1px) scale(1.5); /* Parallax effect */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
 }
 
 #hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 80%;
-  padding: 20px;
 }
 
 .hero h1 {
@@ -137,7 +146,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background-color: #e20c0c;
+  background-color: #2a026a;
   border: none;
   border-radius: 50px;
   text-decoration: none;
@@ -160,6 +169,9 @@ body {
 }
 /* Why Us Section */
 .why-us {
+  background: linear-gradient(135deg, #9a2a2a, #630505);
+}
+.why-us {
   padding: 4rem 0;
   text-align: center;
 }
@@ -173,13 +185,13 @@ body {
 .why-us-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
+  gap: 50px;
+
   margin: 0 auto;
 }
 
 .why-us-item {
-  background-color: #fff;
+  background-color: #630505;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -202,15 +214,18 @@ body {
 .why-us-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #030303;
+  color: #fffcfc;
 }
 
 .why-us-item p {
   font-size: 1rem;
-  color: #333;
+  color: #fdfcfc;
 }
 
 /* About Us Section */
+.about-us {
+  background: linear-gradient(135deg, #630505, #9a2a2a);
+}
 .about-us {
   padding: 4rem 0;
   text-align: center;
@@ -224,15 +239,20 @@ body {
 .about-us-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 60px;
+
+  margin: 5px auto;
 }
 
+.about-point {
+  background-color: #630505;
+  border-radius: 15px;
+  padding: 0px 10px;
+}
 .about-content {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 5rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -246,57 +266,43 @@ body {
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #030303;
+  color: #fdfafa;
 }
 
 .about-text p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.5;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #f8f4f4;
 }
 
 .about-image {
   flex: 1;
   position: relative;
-  overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(90, 3, 3, 0.1);
 }
 
 .about-image img {
   width: 100%;
   height: auto;
-  display: block;
   border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  text-align: center;
-  font-size: 1.2rem;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
 }
 
 /* Portfolio Section */
 .portfolio {
+  background: linear-gradient(135deg, #9a2a2a, #630505);
+}
+.portfolio {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+
   text-align: center;
 }
 
 .portfolio h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #e20c0c;
+  color: #0c0c0c;
 }
 
 .portfolio-grid {
@@ -332,7 +338,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: #2a026aad;
   color: white;
   display: flex;
   flex-direction: column;
@@ -350,7 +356,6 @@ body {
 
 .overlay h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .overlay p {
@@ -360,7 +365,7 @@ body {
 /* Book a Session Section */
 .book-session {
   padding: 4rem 0;
-  background-color: white;
+  background: linear-gradient(135deg, #630505, #9a2a2a);
   text-align: center;
 }
 
@@ -370,6 +375,10 @@ body {
   gap: 20px;
   max-width: 800px;
   margin: auto;
+  background-color: #630505;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
 }
 
 .form-column {
@@ -432,7 +441,7 @@ body {
 }
 
 .footer-wave .shape-fill {
-  fill: #2a026a; /* Match the background of the section above */
+  fill: #9a2a2a; /* Match the background of the section above */
 }
 
 .footer-content {
@@ -504,6 +513,51 @@ S .footer-links h3,
   font-size: 14px;
   opacity: 0.8;
   text-align: center;
+}
+.transition-section {
+  padding: 50px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #2a026a, #9a2a2a);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.transition-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.transition-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Animation for text */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Add a subtle background animation */
+.transition-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  animation: backgroundShift 10s infinite linear;
 }
 
 /* Responsive Design */
