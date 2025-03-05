@@ -24,3 +24,32 @@ document
       alert("Please fill out all required fields.");
     }
   });
+// JavaScript for Booking Form and Pop-Up
+document.addEventListener("DOMContentLoaded", function () {
+  const bookingForm = document.getElementById("booking-form");
+  const successPopup = document.getElementById("success-popup");
+  const closePopup = document.querySelector(".close-popup");
+
+  // Handle form submission
+  bookingForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Display the success pop-up
+    successPopup.style.display = "flex";
+
+    // Optional: Reset the form after submission
+    bookingForm.reset();
+  });
+
+  // Close the pop-up when the close button is clicked
+  closePopup.addEventListener("click", function () {
+    successPopup.style.display = "none";
+  });
+
+  // Close the pop-up when clicking outside the pop-up content
+  window.addEventListener("click", function (e) {
+    if (e.target === successPopup) {
+      successPopup.style.display = "none";
+    }
+  });
+});

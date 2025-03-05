@@ -608,6 +608,53 @@ nav a:hover {
   background-color: #2a026aac;
   transform: translateY(-2px);
 }
+/* Pop-Up Styling */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it's on top */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2a026a; /* Match your theme color */
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #fcfafa;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-popup:hover {
+  color: #2a026a; /* Match your theme color */
+}
 
 @media (max-width: 768px) {
   .booking-form {
