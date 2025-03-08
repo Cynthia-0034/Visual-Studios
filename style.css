@@ -451,13 +451,6 @@ nav a:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-bottom: 2rem;
-}
-
 .portfolio-item {
   position: relative;
   overflow: hidden;
@@ -478,24 +471,6 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2a026aad;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 20px;
-  text-align: center;
-}
-
 .portfolio-item:hover .overlay {
   opacity: 1;
 }
@@ -508,11 +483,18 @@ nav a:hover {
   font-size: 1rem;
 }
 /* Portfolio Grid */
+.portfolio-category {
+  margin-bottom: 4rem;
+}
+.portfolio-category h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2a026a;
+}
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  margin-bottom: 2rem;
 }
 
 .portfolio-item {
@@ -525,10 +507,15 @@ nav a:hover {
 
 .portfolio-item img {
   width: 100%;
-  height: 300px;
+  height: 450px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  position: relative; /* or absolute/fixed */
+  z-index: 1;
+}
+.portfolio-item h1 {
+  margin-top: 50px;
 }
 
 .portfolio-item:hover img {
@@ -559,7 +546,7 @@ nav a:hover {
 
 .overlay h3 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 100px;
 }
 
 .overlay p {
@@ -567,23 +554,45 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.overlay .cta-button {
-  background-color: #ffd700;
-  color: #2a026a;
+.cta-button {
+  display: inline-block;
   padding: 10px 20px;
-  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
   transition: background-color 0.3s ease;
 }
-
-.overlay .cta-button:hover {
-  background-color: #e6b800;
+.cta-button:hover {
+  background-color: #0056b3;
 }
+.cta-btn {
+  width: auto;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #faf9fb;
+  background-color: #2a026a;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  transform: translateY(20px); /* Add this line to push the button downwards */
+  position: relative; /* Ensure the button has a positioning context */
+  z-index: 10; /* Bring the button to the front */
+}
+.cta-btn:hover {
+  background-color: #2a026aac;
+  transform: translateY(-2px);
+}
+
 /* Videography Section */
 .portfolio-video {
   width: 100%;
-  height: 300px;
+  height: 450px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
@@ -607,6 +616,11 @@ nav a:hover {
 
 .portfolio-item:hover video::after {
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Stack items on smaller screens */
+  }
 }
 /* Book a Session Section */
 #book-session {
@@ -703,6 +717,7 @@ nav a:hover {
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-decoration: none;
   text-align: center;
+  margin-top: 10px;
 }
 
 .cta-button:hover {

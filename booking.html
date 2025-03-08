@@ -12,7 +12,7 @@
       <div class="container">
         <div id="top-nav">
           <div class="logo-container">
-            <img src="logo.jpg" alt="Visuals Studio Logo" />
+            <img src="images/logo.jpg" alt="Visuals Studio Logo" />
             <h1>Visuals Creative Studios</h1>
           </div>
           <nav>
@@ -32,7 +32,12 @@
       <div class="container">
         <h2>Book a Session</h2>
         <p>Secure your spot for an unforgettable photography experience.</p>
-        <form action="#" method="POST" class="booking-form">
+        <form
+          action="#"
+          method="POST"
+          class="booking-form"
+          onsubmit="sendToWhatsApp(event)"
+        >
           <div class="form-column">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -123,7 +128,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="logo.jpg" alt="Visuals Studio Logo" />
+            <img src="images/logo.jpg" alt="Visuals Studio Logo" />
             <p>Capturing moments that last a lifetime.</p>
           </div>
           <div class="footer-links">
@@ -138,8 +143,10 @@
           <div class="footer-social">
             <h3>Follow Us</h3>
             <div class="social-icons">
-              <a href="#"><img src="Facebook.png" alt="Facebook" /></a>
-              <a href="#"><img src="Instagram (1).png" alt="Instagram" /></a>
+              <a href="#"><img src="./images/Facebook.png" alt="Facebook" /></a>
+              <a href="#"
+                ><img src="./images/Instagram.png" alt="Instagram"
+              /></a>
             </div>
           </div>
         </div>
@@ -148,5 +155,43 @@
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript to Send Data to WhatsApp -->
+    <script>
+      function sendToWhatsApp(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Collect form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const sessionType = document.getElementById("session-type").value;
+        const message = document.getElementById("message").value;
+
+        // Format the message
+        const whatsappMessage = `New Booking Request:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Preferred Date: ${date}
+Preferred Time: ${time}
+Session Type: ${sessionType}
+Additional Notes: ${message}`;
+
+        // Encode the message for the URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // WhatsApp number (replace with your number)
+        const whatsappNumber = "+254714819893";
+
+        // Redirect to WhatsApp
+        window.open(
+          `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+          "_blank"
+        );
+      }
+    </script>
   </body>
 </html>
